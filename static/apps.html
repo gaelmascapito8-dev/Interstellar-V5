@@ -15,9 +15,115 @@
     <link rel="stylesheet" href="/assets/css/nav.css?v=01" />
     <script src="/assets/js/i.js?v=02"></script>
     <script src="assets/js/f.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6840529569014734"
+    <script async src="https://googlesyndication.com"
      crossorigin="anonymous"></script>
 
+    <!-- 🎮 PS5 CONSOLE VISUAL THEME 🎮 -->
+    <style>
+      /* Dark interactive console background */
+      body {
+        background: radial-gradient(circle at center, #1f2535 0%, #0b0d13 100%) !important;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+
+      /* Premium PS5 interface search container */
+      .input-container {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 40px;
+      }
+
+      #searchbarbottom, #category {
+        background: rgba(255, 255, 255, 0.07) !important;
+        border: 2px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 50px !important;
+        color: white !important;
+        padding: 12px 24px !important;
+        font-size: 16px !important;
+        outline: none !important;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      #searchbarbottom:focus, #category:focus {
+        border-color: #0070d1 !important; /* Iconic PS5 Blue Focus Line */
+        box-shadow: 0 0 15px rgba(0, 112, 209, 0.4);
+        background: rgba(255, 255, 255, 0.15) !important;
+      }
+
+      /* Dashboard Apps Grid setup */
+      .container-apps, .pinned-apps {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important;
+        gap: 25px !important;
+        padding: 20px max(2rem, 5vw) !important;
+        justify-content: center;
+      }
+
+      /* Transform standard elements into PS5 Game Cards */
+      .container-apps > div, .pinned-apps > div, .app-card, .custom-app { 
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 2px solid rgba(255, 255, 255, 0.05) !important;
+        border-radius: 20px !important;
+        padding: 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        backdrop-filter: blur(10px);
+        /* Hyper-smooth animations when hover leaves */
+        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                    box-shadow 0.3s ease, 
+                    border-color 0.3s ease, 
+                    background 0.3s ease !important;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Hover Effects matching the PlayStation dashboard */
+      .container-apps > div:hover, .pinned-apps > div:hover, .app-card:hover, .custom-app:hover {
+        transform: scale(1.12) translateY(-7px) !important; /* Floats up beautifully */
+        background: rgba(255, 255, 255, 0.12) !important;
+        border-color: #ffffff !important; /* Clean glowing edge */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 
+                    0 0 20px rgba(255, 255, 255, 0.2) !important; /* Soft white aura glow */
+        z-index: 10;
+      }
+
+      /* Application shortcut icon optimization */
+      .container-apps img, .pinned-apps img {
+        width: 75px !important;
+        height: 75px !important;
+        border-radius: 16px !important;
+        object-fit: cover !important;
+        margin-bottom: 12px !important;
+        transition: transform 0.3s ease;
+      }
+
+      /* Subtle inner zoom animation on icons */
+      .container-apps > div:hover img, .pinned-apps > div:hover img {
+        transform: scale(1.05);
+      }
+
+      /* App Labels styling */
+      .container-apps p, .container-apps span, .pinned-apps p, .pinned-apps span {
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        letter-spacing: 0.5px;
+        color: rgba(255, 255, 255, 0.9) !important;
+        text-align: center;
+        margin: 0 !important;
+      }
+      
+      .container-apps > div:hover p, .pinned-apps > div:hover p {
+        color: #ffffff !important;
+      }
+    </style>
   </head>
   <body>
     <div class="fixed-nav-bar"></div>
@@ -54,7 +160,7 @@
     <script src="/assets/js/m.js?v=07"></script>
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-WKJQ5QHQTJ"
+      src="https://googletagmanager.com"
     ></script>
     <!-- DO NOT REMOVE-->
     <script>
