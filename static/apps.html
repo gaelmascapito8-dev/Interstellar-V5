@@ -173,5 +173,74 @@
       gtag("config", "G-WKJQ5QHQTJ");
     </script>
     <!-- DO NOT REMOVE-->
+         <!-- 🔊 SCRIPT PARA LOS SONIDOS DE PS5 🔊 -->
+    <script>
+      // Crea el efecto de sonido de navegación "tic" futurista de la PS5 usando código de audio limpio
+      function playPs5HoverSound() {
+        try {
+          const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          const oscillator = audioCtx.createOscillator();
+          const gainNode = audioCtx.createGain();
+          
+          oscillator.type = 'sine';
+          oscillator.frequency.setValueAtTime(880, audioCtx.currentTime); // Tono agudo fino
+          oscillator.frequency.exponentialRampToValueAtTime(110, audioCtx.currentTime + 0.1);
+          
+          gainNode.gain.setValueAtTime(0.04, audioCtx.currentTime); // Volumen suave para no asustar
+          gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
+          
+          oscillator.connect(gainNode);
+          gainNode.connect(audioCtx.destination);
+          
+          oscillator.start();
+          oscillator.stop(audioCtx.currentTime + 0.1);
+        } catch (e) {
+          console.log("Audio blocado por el navegador");
+        }
+      }
+
+      // Sonido de clic al entrar a un juego/app (Sonido premium de selección de PS5)
+      function playPs5ClickSound() {
+        try {
+          const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          const oscillator = audioCtx.createOscillator();
+          const gainNode = audioCtx.createGain();
+          
+          oscillator.type = 'triangle';
+          oscillator.frequency.setValueAtTime(523.25, audioCtx.currentTime); // Nota Do premium
+          oscillator.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.05); // Nota Sol premium
+          
+          gainNode.gain.setValueAtTime(0.08, audioCtx.currentTime);
+          gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.2);
+          
+          oscillator.connect(gainNode);
+          gainNode.connect(audioCtx.destination);
+          
+          oscillator.start();
+          oscillator.stop(audioCtx.currentTime + 0.2);
+        } catch (e) {}
+      }
+
+      // Activa los sonidos automáticamente detectando cuando aparecen las tarjetas en pantalla
+      const observer = new MutationObserver((mutations) => {
+        // Busca las tarjetas de aplicaciones que cargan dinámicamente
+        const cards = document.querySelectorAll('.container-apps > div, .pinned-apps > div, .app-card, .custom-app');
+        
+        cards.forEach(card => {
+          if (!card.dataset.soundAdded) {
+            card.dataset.soundAdded = "true";
+            
+            // Sonido al pasar el mouse por encima
+            card.addEventListener('mouseenter', playPs5HoverSound);
+            
+            // Sonido al darle clic para entrar
+            card.addEventListener('click', playPs5ClickSound);
+          }
+        });
+      });
+
+      // Se queda escuchando la página por si se cargan más aplicaciones
+      observer.observe(document.body, { childList: true, subtree: true });
+    </script>
   </body>
 </html>
