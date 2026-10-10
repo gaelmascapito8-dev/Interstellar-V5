@@ -15,6 +15,111 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6840529569014734"
      crossorigin="anonymous"></script>
 
+    <!-- 🎮 CUSTOM ELECTRIC LIGHT BLUE PS5 THEME 🎮 -->
+    <style>
+      /* Dark interactive background with a rich light blue neon center glow */
+      body {
+        background: radial-gradient(circle at center, #1a365d 0%, #070a12 100%) !important;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+
+      /* Premium interface search bar container */
+      .input-container {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 40px;
+      }
+
+      #searchbarbottom, #category {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 2px solid rgba(0, 162, 255, 0.2) !important; /* Subtle light blue border */
+        border-radius: 50px !important;
+        color: white !important;
+        padding: 12px 24px !important;
+        font-size: 16px !important;
+        outline: none !important;
+        backdrop-filter: blur(15px);
+        transition: all 0.3s ease;
+      }
+
+      #searchbarbottom:focus, #category:focus {
+        border-color: #00a2ff !important; /* Rich light blue neon lines */
+        box-shadow: 0 0 20px rgba(0, 162, 255, 0.6);
+        background: rgba(255, 255, 255, 0.1) !important;
+      }
+
+      /* Games Grid Dashboard Setup */
+      .container-apps, .pinned-apps {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important;
+        gap: 25px !important;
+        padding: 20px max(2rem, 5vw) !important;
+        justify-content: center;
+      }
+
+      /* Minimalist PS5 Game Cards Layout */
+      .container-apps > div, .pinned-apps > div, .app-card, .custom-app { 
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 2px solid rgba(255, 255, 255, 0.05) !important;
+        border-radius: 24px !important; /* Rounded premium style */
+        padding: 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        backdrop-filter: blur(10px);
+        /* Ultra smooth floating animation out */
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                    box-shadow 0.4s ease, 
+                    border-color 0.4s ease, 
+                    background 0.4s ease !important;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* THE MAGIC HOVER EFFECT: Card floats up and glows in electric light blue */
+      .container-apps > div:hover, .pinned-apps > div:hover, .app-card:hover, .custom-app:hover {
+        transform: scale(1.1) translateY(-8px) !important;
+        background: rgba(0, 162, 255, 0.1) !important; /* Soft blue tint background */
+        border-color: #00a2ff !important; /* Shiny electric light blue border */
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 
+                    0 0 25px rgba(0, 162, 255, 0.4) !important; /* Light blue neon aura halo */
+        z-index: 10;
+      }
+
+      /* Optimization for game covers/icons */
+      .container-apps img, .pinned-apps img {
+        width: 80px !important;
+        height: 80px !important;
+        border-radius: 18px !important;
+        object-fit: cover !important;
+        margin-bottom: 12px !important;
+        transition: transform 0.3s ease;
+      }
+
+      .container-apps > div:hover img, .pinned-apps > div:hover img {
+        transform: scale(1.08);
+      }
+
+      /* Clean English Game Labels styling */
+      .container-apps p, .container-apps span, .pinned-apps p, .pinned-apps span {
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        letter-spacing: 0.5px;
+        color: rgba(255, 255, 255, 0.85) !important;
+        text-align: center;
+        margin: 0 !important;
+      }
+      
+      .container-apps > div:hover p, .pinned-apps > div:hover p {
+        color: #00a2ff !important; /* Label text glows blue on card focus */
+      }
+    </style>
   </head>
   <body>
     <div class="fixed-nav-bar"></div>
@@ -23,16 +128,16 @@
         type="text"
         id="searchbarbottom"
         onkeyup="searchBar()"
-        placeholder="Search"
+        placeholder="Search Games"
       />
       <select id="category" name="category" onchange="showCategory()">
-        <option value="all">All</option>
+        <option value="all">All Games</option>
         <option value="android">Android Emulator</option>
         <option value="2P">Multiplayer</option>
         <option value="sports">Sports</option>
-        <option value="flash">Flash</option>
-        <option value="emu">Emulator</option>
-        <option value="local">Local</option>
+        <option value="flash">Flash Games</option>
+        <option value="emu">Emulators</option>
+        <option value="local">Local Files</option>
       </select>
     </div>
     <div class="pinned-apps"></div>
